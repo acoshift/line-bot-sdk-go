@@ -288,15 +288,12 @@ func (app *KitchenSink) handleText(message *linebot.TextMessage, replyToken stri
 		// }
 		contents := &linebot.BubbleContainer{
 			Body: &linebot.BoxComponent{
-				Type:   linebot.FlexComponentTypeBox,
 				Layout: linebot.FlexBoxLayoutTypeHorizontal,
 				Contents: []linebot.FlexComponent{
 					&linebot.TextComponent{
-						Type: linebot.FlexComponentTypeText,
 						Text: "Hello,",
 					},
 					&linebot.TextComponent{
-						Type: linebot.FlexComponentTypeText,
 						Text: "World!",
 					},
 				},
@@ -344,11 +341,9 @@ func (app *KitchenSink) handleText(message *linebot.TextMessage, replyToken stri
 			Contents: []*linebot.BubbleContainer{
 				{
 					Body: &linebot.BoxComponent{
-						Type:   linebot.FlexComponentTypeBox,
 						Layout: linebot.FlexBoxLayoutTypeVertical,
 						Contents: []linebot.FlexComponent{
 							&linebot.TextComponent{
-								Type: linebot.FlexComponentTypeText,
 								Text: "First bubble",
 							},
 						},
@@ -356,11 +351,9 @@ func (app *KitchenSink) handleText(message *linebot.TextMessage, replyToken stri
 				},
 				{
 					Body: &linebot.BoxComponent{
-						Type:   linebot.FlexComponentTypeBox,
 						Layout: linebot.FlexBoxLayoutTypeVertical,
 						Contents: []linebot.FlexComponent{
 							&linebot.TextComponent{
-								Type: linebot.FlexComponentTypeText,
 								Text: "Second bubble",
 							},
 						},

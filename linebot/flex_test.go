@@ -44,15 +44,12 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
   }`),
 			Want: &BubbleContainer{
 				Body: &BoxComponent{
-					Type:   FlexComponentTypeBox,
 					Layout: FlexBoxLayoutTypeVertical,
 					Contents: []FlexComponent{
 						&TextComponent{
-							Type: FlexComponentTypeText,
 							Text: "hello",
 						},
 						&TextComponent{
-							Type: FlexComponentTypeText,
 							Text: "world",
 						},
 					},
@@ -95,11 +92,9 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 				Contents: []*BubbleContainer{
 					{
 						Body: &BoxComponent{
-							Type:   FlexComponentTypeBox,
 							Layout: FlexBoxLayoutTypeVertical,
 							Contents: []FlexComponent{
 								&TextComponent{
-									Type: FlexComponentTypeText,
 									Text: "First bubble",
 								},
 							},
@@ -107,11 +102,9 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 					},
 					{
 						Body: &BoxComponent{
-							Type:   FlexComponentTypeBox,
 							Layout: FlexBoxLayoutTypeVertical,
 							Contents: []FlexComponent{
 								&TextComponent{
-									Type: FlexComponentTypeText,
 									Text: "Second bubble",
 								},
 							},
@@ -273,7 +266,6 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 }`),
 			Want: &BubbleContainer{
 				Hero: &ImageComponent{
-					Type:        FlexComponentTypeImage,
 					URL:         "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
 					Size:        FlexImageSizeTypeFull,
 					AspectRatio: FlexImageAspectRatioType20to13,
@@ -281,46 +273,37 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 					Action:      &URIAction{URI: "http://linecorp.com/"},
 				},
 				Body: &BoxComponent{
-					Type:   FlexComponentTypeBox,
 					Layout: FlexBoxLayoutTypeVertical,
 					Contents: []FlexComponent{
 						&TextComponent{
-							Type:   FlexComponentTypeText,
 							Text:   "Brown Cafe",
 							Size:   FlexTextSizeTypeXl,
 							Weight: FlexTextWeightTypeBold,
 						},
 						&BoxComponent{
-							Type:   FlexComponentTypeBox,
 							Layout: FlexBoxLayoutTypeBaseline,
 							Contents: []FlexComponent{
 								&IconComponent{
-									Type: FlexComponentTypeIcon,
 									URL:  "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
 									Size: FlexIconSizeTypeSm,
 								},
 								&IconComponent{
-									Type: FlexComponentTypeIcon,
 									URL:  "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
 									Size: FlexIconSizeTypeSm,
 								},
 								&IconComponent{
-									Type: FlexComponentTypeIcon,
 									URL:  "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
 									Size: FlexIconSizeTypeSm,
 								},
 								&IconComponent{
-									Type: FlexComponentTypeIcon,
 									URL:  "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
 									Size: FlexIconSizeTypeSm,
 								},
 								&IconComponent{
-									Type: FlexComponentTypeIcon,
 									URL:  "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png",
 									Size: FlexIconSizeTypeSm,
 								},
 								&TextComponent{
-									Type:   FlexComponentTypeText,
 									Text:   "4.0",
 									Flex:   0,
 									Margin: FlexComponentMarginTypeMd,
@@ -331,22 +314,18 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 							Margin: FlexComponentMarginTypeMd,
 						},
 						&BoxComponent{
-							Type:   FlexComponentTypeBox,
 							Layout: FlexBoxLayoutTypeVertical,
 							Contents: []FlexComponent{
 								&BoxComponent{
-									Type:   FlexComponentTypeBox,
 									Layout: FlexBoxLayoutTypeBaseline,
 									Contents: []FlexComponent{
 										&TextComponent{
-											Type:  FlexComponentTypeText,
 											Text:  "Place",
 											Flex:  1,
 											Size:  FlexTextSizeTypeSm,
 											Color: "#aaaaaa",
 										},
 										&TextComponent{
-											Type:  FlexComponentTypeText,
 											Text:  "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
 											Flex:  5,
 											Size:  FlexTextSizeTypeSm,
@@ -357,18 +336,15 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 									Spacing: FlexComponentSpacingTypeSm,
 								},
 								&BoxComponent{
-									Type:   FlexComponentTypeBox,
 									Layout: FlexBoxLayoutTypeBaseline,
 									Contents: []FlexComponent{
 										&TextComponent{
-											Type:  FlexComponentTypeText,
 											Text:  "Time",
 											Flex:  1,
 											Size:  FlexTextSizeTypeSm,
 											Color: "#aaaaaa",
 										},
 										&TextComponent{
-											Type:  FlexComponentTypeText,
 											Text:  "10:00 - 23:00",
 											Flex:  5,
 											Size:  FlexTextSizeTypeSm,
@@ -385,11 +361,9 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 					},
 				},
 				Footer: &BoxComponent{
-					Type:   FlexComponentTypeBox,
 					Layout: FlexBoxLayoutTypeVertical,
 					Contents: []FlexComponent{
 						&ButtonComponent{
-							Type: FlexComponentTypeButton,
 							Action: &URIAction{
 								Label: "CALL",
 								URI:   "https://linecorp.com",
@@ -398,7 +372,6 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 							Style:  FlexButtonStyleTypeLink,
 						},
 						&ButtonComponent{
-							Type: FlexComponentTypeButton,
 							Action: &URIAction{
 								Label: "WEBSITE",
 								URI:   "https://linecorp.com",
@@ -407,7 +380,6 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 							Style:  FlexButtonStyleTypeLink,
 						},
 						&SpacerComponent{
-							Type: FlexComponentTypeSpacer,
 							Size: FlexSpacerSizeTypeSm,
 						},
 					},
