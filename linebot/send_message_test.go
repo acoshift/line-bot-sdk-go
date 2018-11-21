@@ -372,7 +372,6 @@ func TestPushMessages(t *testing.T) {
 				NewFlexMessage(
 					"this is a flex message",
 					&BubbleContainer{
-						Type: FlexContainerTypeBubble,
 						Body: &BoxComponent{
 							Type:   FlexComponentTypeBox,
 							Layout: FlexBoxLayoutTypeVertical,

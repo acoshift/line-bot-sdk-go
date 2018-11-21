@@ -287,7 +287,6 @@ func (app *KitchenSink) handleText(message *linebot.TextMessage, replyToken stri
 		//   }
 		// }
 		contents := &linebot.BubbleContainer{
-			Type: linebot.FlexContainerTypeBubble,
 			Body: &linebot.BoxComponent{
 				Type:   linebot.FlexComponentTypeBox,
 				Layout: linebot.FlexBoxLayoutTypeHorizontal,
@@ -342,10 +341,8 @@ func (app *KitchenSink) handleText(message *linebot.TextMessage, replyToken stri
 		//   ]
 		// }
 		contents := &linebot.CarouselContainer{
-			Type: linebot.FlexContainerTypeCarousel,
 			Contents: []*linebot.BubbleContainer{
 				{
-					Type: linebot.FlexContainerTypeBubble,
 					Body: &linebot.BoxComponent{
 						Type:   linebot.FlexComponentTypeBox,
 						Layout: linebot.FlexBoxLayoutTypeVertical,
@@ -358,7 +355,6 @@ func (app *KitchenSink) handleText(message *linebot.TextMessage, replyToken stri
 					},
 				},
 				{
-					Type: linebot.FlexContainerTypeBubble,
 					Body: &linebot.BoxComponent{
 						Type:   linebot.FlexComponentTypeBox,
 						Layout: linebot.FlexBoxLayoutTypeVertical,

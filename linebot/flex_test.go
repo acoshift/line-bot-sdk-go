@@ -43,7 +43,6 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
     }
   }`),
 			Want: &BubbleContainer{
-				Type: FlexContainerTypeBubble,
 				Body: &BoxComponent{
 					Type:   FlexComponentTypeBox,
 					Layout: FlexBoxLayoutTypeVertical,
@@ -93,10 +92,8 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
   ]
 }`),
 			Want: &CarouselContainer{
-				Type: FlexContainerTypeCarousel,
 				Contents: []*BubbleContainer{
 					{
-						Type: FlexContainerTypeBubble,
 						Body: &BoxComponent{
 							Type:   FlexComponentTypeBox,
 							Layout: FlexBoxLayoutTypeVertical,
@@ -109,7 +106,6 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
 						},
 					},
 					{
-						Type: FlexContainerTypeBubble,
 						Body: &BoxComponent{
 							Type:   FlexComponentTypeBox,
 							Layout: FlexBoxLayoutTypeVertical,
@@ -276,7 +272,6 @@ func TestUnmarshalFlexMessageJSON(t *testing.T) {
   }
 }`),
 			Want: &BubbleContainer{
-				Type: FlexContainerTypeBubble,
 				Hero: &ImageComponent{
 					Type:        FlexComponentTypeImage,
 					URL:         "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",

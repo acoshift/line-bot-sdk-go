@@ -14,6 +14,8 @@
 
 package linebot
 
+import "encoding/json"
+
 // FlexContainerType type
 type FlexContainerType string
 
@@ -243,19 +245,49 @@ type FlexContainer interface {
 
 // BubbleContainer type
 type BubbleContainer struct {
-	Type      FlexContainerType       `json:"type"`
-	Direction FlexBubbleDirectionType `json:"direction,omitempty"`
-	Header    *BoxComponent           `json:"header,omitempty"`
-	Hero      *ImageComponent         `json:"hero,omitempty"`
-	Body      *BoxComponent           `json:"body,omitempty"`
-	Footer    *BoxComponent           `json:"footer,omitempty"`
-	Styles    *BubbleStyle            `json:"styles,omitempty"`
+	Direction FlexBubbleDirectionType
+	Header    *BoxComponent
+	Hero      *ImageComponent
+	Body      *BoxComponent
+	Footer    *BoxComponent
+	Styles    *BubbleStyle
+}
+
+// MarshalJSON method of BubbleContainer
+func (c *BubbleContainer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(&struct {
+		Type      FlexContainerType       `json:"type"`
+		Direction FlexBubbleDirectionType `json:"direction,omitempty"`
+		Header    *BoxComponent           `json:"header,omitempty"`
+		Hero      *ImageComponent         `json:"hero,omitempty"`
+		Body      *BoxComponent           `json:"body,omitempty"`
+		Footer    *BoxComponent           `json:"footer,omitempty"`
+		Styles    *BubbleStyle            `json:"styles,omitempty"`
+	}{
+		Type:      FlexContainerTypeBubble,
+		Direction: c.Direction,
+		Header:    c.Header,
+		Hero:      c.Hero,
+		Body:      c.Body,
+		Footer:    c.Footer,
+		Styles:    c.Styles,
+	})
 }
 
 // CarouselContainer type
 type CarouselContainer struct {
-	Type     FlexContainerType  `json:"type"`
-	Contents []*BubbleContainer `json:"contents"`
+	Contents []*BubbleContainer
+}
+
+// MarshalJSON method of CarouselContainer
+func (c *CarouselContainer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(&struct {
+		Type     FlexContainerType  `json:"type"`
+		Contents []*BubbleContainer `json:"contents"`
+	}{
+		Type:     FlexContainerTypeCarousel,
+		Contents: c.Contents,
+	})
 }
 
 // FlexContainer implements FlexContainer interface
