@@ -1,1 +1,1 @@
-module github.com/line/line-bot-sdk-go/linebot
+module github.com/acoshift/line-bot-sdk-go/linebot
